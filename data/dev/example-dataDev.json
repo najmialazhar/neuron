@@ -1,0 +1,24 @@
+{
+    "MENU_LOGIN": {
+        "LOGINPASSWORDINVALID": {
+            "username": "Admin",
+            "password": "Admin123456"
+        },
+        "LOGINKREDENSIALINVALID": {
+            "username": "wanto",
+            "password": "ada12345"
+        }
+    },
+    "MENU_ADMIN": {
+        "ADDUSERADMIN": {
+            "userrole": "admin",
+            "employeename": "Peter Mac Anderson",
+            "status": "Enabled",
+            "username": "wawan",
+            "password": "Wawan123"
+        },
+        "UPDATEUSERADMIN": {
+            "username": "wawan1"
+        }
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "MENU_LOGIN": {
+        "LOGINPASSWORDINVALID": {
+            "username": "pandupp21",
+            "password": "admin123"
+        },
+        "LOGINKREDENSIALINVALID": {
+            "username": "qa_testing",
+            "password": "NEURON"    
+        }
+    }
+}
