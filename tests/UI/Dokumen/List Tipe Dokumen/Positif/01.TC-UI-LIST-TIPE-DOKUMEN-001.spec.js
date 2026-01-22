@@ -15,7 +15,7 @@ test('Get List Data Tipe Dokumen', async ({ page, browserName }, testInfo) => {
   ReportingApi.setTestCaseId('TC-UI-LIST-TIPE-DOKUMEN-001');
   //baris ini berfungsi untuk menginputkan data test step yang ada di test case
   ReportingApi.setDescription(`
-      Test Step :
+      Test Step :await page.goto('http://10.62.180.28/idmtdev/public/idmt');
       1. Login Admin
       2. Masuk ke Menu Dokumen -> List Kelola tipe dokumen
   `);
