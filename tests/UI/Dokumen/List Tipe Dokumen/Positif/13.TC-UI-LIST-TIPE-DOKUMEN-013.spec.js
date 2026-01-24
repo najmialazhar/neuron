@@ -12,14 +12,14 @@ const dataQa = qaTestData.MENU_LOGIN.LOGINKREDENSIALINVALID;
 
 test('Hapus Data Tipe Dokumen', async ({ page, browserName }, testInfo) => {
   //baris ini berfungsi untuk menginputkan data scenario id yang ada di test case
-  ReportingApi.setTestCaseId('TC-UI-LIST-TIPE-DOKUMEN-012');
+  ReportingApi.setTestCaseId('TC-UI-LIST-TIPE-DOKUMEN-013');
   //baris ini berfungsi untuk menginputkan data test step yang ada di test case
   ReportingApi.setDescription(`
       Test Step :
       1. Login Admin
       2. Masuk ke Menu Dokumen -> List Kelola tipe dokumen
       3. Klik button "Hapus" pada salah satu data
-      4. Tidak
+      4. Ya
   `);
   ReportingApi.addAttributes([{ key: 'browser', value: browserName }]);
   let testData = dataDev;
