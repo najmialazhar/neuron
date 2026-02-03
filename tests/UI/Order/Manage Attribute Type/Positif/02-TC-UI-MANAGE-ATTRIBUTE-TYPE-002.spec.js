@@ -9,15 +9,15 @@ const qaTestData = JSON.parse(JSON.stringify(require('../../../../../data/qa/dat
 const dataQa = qaTestData.MENU_LOGIN.LOGINKREDENSIALINVALID;
 
 
-test('Search Data Dokumen', async ({ page, browserName }, testInfo) => {
+test('Search Data Manage Attribute Type', async ({ page, browserName }, testInfo) => {
   //baris ini berfungsi untuk menginputkan data scenario id yang ada di test case
-  ReportingApi.setTestCaseId('TC-UI-LIST-DOKUMEN-003');
+  ReportingApi.setTestCaseId('TC-UI-MANAGE-ATTRIBUTE-TYPE-002');
   //baris ini berfungsi untuk menginputkan data test step yang ada di test case
   ReportingApi.setDescription(`
       Test Step :
       1. Login Admin
       2. Masuk ke Menu Order -> List Manage Attribute Type
-      3. Masukkan inputan "qa_testing" pada kolom search
+      3. Masukkan inputan "Attribute Type Name 001" pada kolom search
   `);
   ReportingApi.addAttributes([{ key: 'browser', value: browserName }]);
   let testData = dataDev;
@@ -28,7 +28,7 @@ test('Search Data Dokumen', async ({ page, browserName }, testInfo) => {
   await page.goto(process.env.WEB_URL);
   await page.getByRole('link', { name: 'Order' }).click();
   await page.getByRole('link', { name: 'Manage Attribute Type' }).click();
-  const keyword = '12122121'; // sesuaikan sama nomor dokumen yg mau dicari
+  const keyword = 'Attribute Type Name 001'; // sesuaikan sama nomor dokumen yg mau dicari
   const searchbox = page.getByRole('searchbox', { name: /cari/i });
   await searchbox.fill(keyword);
   await expect(page.locator('tbody')).toContainText(keyword);

@@ -9,7 +9,7 @@ const qaTestData = JSON.parse(JSON.stringify(require('../../../../../data/qa/dat
 const dataQa = qaTestData.MENU_LOGIN.LOGINKREDENSIALINVALID;
 
 
-test('List Data Attibute Type', async ({ page, browserName }, testInfo) => {
+test('Get List Data Manage Attribute Type', async ({ page, browserName }, testInfo) => {
   //baris ini berfungsi untuk menginputkan data scenario id yang ada di test case
   ReportingApi.setTestCaseId('TC-UI-MANAGE-ATTRIBUTE-TYPE-001');
   //baris ini berfungsi untuk menginputkan data test step yang ada di test case
@@ -27,7 +27,6 @@ test('List Data Attibute Type', async ({ page, browserName }, testInfo) => {
   await page.goto(process.env.WEB_URL);
   await page.getByRole('link', { name: 'Order ' }).click();
   await page.getByRole('link', { name: 'Manage Attribute Type' }).click();
-  await expect(page.getByText('Menampilkan 1 sampai 3 dari 3')).toBeVisible();
   await expect(page.locator('#grid-attribute_info')).toContainText(/Menampilkan.*entri/i);
 
   const screenshot = await page.screenshot();

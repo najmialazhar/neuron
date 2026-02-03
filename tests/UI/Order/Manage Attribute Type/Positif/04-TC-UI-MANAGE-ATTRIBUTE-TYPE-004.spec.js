@@ -9,7 +9,7 @@ const qaTestData = JSON.parse(JSON.stringify(require('../../../../../data/qa/dat
 const dataQa = qaTestData.MENU_LOGIN.LOGINKREDENSIALINVALID;
 
 
-test('Search Data Dokumen', async ({ page, browserName }, testInfo) => {
+test('Create Data Manage Attribute Type', async ({ page, browserName }, testInfo) => {
   //baris ini berfungsi untuk menginputkan data scenario id yang ada di test case
   ReportingApi.setTestCaseId('TC-UI-MANAGE-ATTRIBUTE-TYPE-004');
   //baris ini berfungsi untuk menginputkan data test step yang ada di test case
@@ -17,7 +17,11 @@ test('Search Data Dokumen', async ({ page, browserName }, testInfo) => {
       Test Step :
       1. Login Admin
       2. Masuk ke Menu Order -> List Manage Attribute Type
-      3. Masukkan inputan "qqq" pada kolom search
+      3. Klik button "buat baru"
+          Nama : Attribute Type Name 003
+          Deskripsi : For Playwright Testing
+      4. Simpan
+      5. Refresh Page
   `);
   ReportingApi.addAttributes([{ key: 'browser', value: browserName }]);
   let testData = dataDev;

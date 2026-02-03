@@ -9,7 +9,7 @@ const qaTestData = JSON.parse(JSON.stringify(require('../../../../../data/qa/dat
 const dataQa = qaTestData.MENU_LOGIN.LOGINKREDENSIALINVALID;
 
 
-test('Search Data Dokumen', async ({ page, browserName }, testInfo) => {
+test('Search Data Manage Attribute Type', async ({ page, browserName }, testInfo) => {
   //baris ini berfungsi untuk menginputkan data scenario id yang ada di test case
   ReportingApi.setTestCaseId('TC-UI-MANAGE-ATTRIBUTE-TYPE-003');
   //baris ini berfungsi untuk menginputkan data test step yang ada di test case

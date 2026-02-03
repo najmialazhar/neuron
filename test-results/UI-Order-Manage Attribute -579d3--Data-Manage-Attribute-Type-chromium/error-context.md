@@ -1,0 +1,137 @@
+# Page snapshot
+
+```yaml
+- generic [active]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e5]:
+        - img "Telkom Indonesia" [ref=e6]
+        - generic [ref=e7]:
+          - text: IDMT
+          - paragraph [ref=e8]: Identity Management Technician
+      - generic [ref=e9]:
+        - link "Tambah Modul " [ref=e10] [cursor=pointer]:
+          - /url: /idmtdev/public/module
+          - generic [ref=e11]: Tambah Modul
+          - generic [ref=e13]: 
+        - text: 
+      - navigation [ref=e15]:
+        - button "Go back" [ref=e16] [cursor=pointer]:
+          - generic [ref=e17]: 
+        - navigation "You are here" [ref=e18]:
+          - link "all " [ref=e19] [cursor=pointer]:
+            - /url: "#"
+          - link "Order":
+            - /url: "#"
+        - menu "Order" [ref=e21]:
+          - menuitem "· Manage Attribute Type" [ref=e22]:
+            - link "· Manage Attribute Type" [ref=e23] [cursor=pointer]:
+              - /url: /idmtdev/public/order/attribute/type
+          - menuitem "Manage Detail Type" [ref=e24]:
+            - link "Manage Detail Type" [ref=e25] [cursor=pointer]:
+              - /url: /idmtdev/public/order/detail/type
+          - menuitem "Manage Status" [ref=e26]:
+            - link "Manage Status" [ref=e27] [cursor=pointer]:
+              - /url: /idmtdev/public/order/status/manage
+          - menuitem "Define Subtype" [ref=e28]:
+            - link "Define Subtype" [ref=e29] [cursor=pointer]:
+              - /url: /idmtdev/public/order/subtype/manage
+          - menuitem "Define Type" [ref=e30]:
+            - link "Define Type" [ref=e31] [cursor=pointer]:
+              - /url: /idmtdev/public/order/type/manage
+      - list [ref=e33]:
+        - listitem [ref=e34]:
+          - link "" [ref=e35] [cursor=pointer]:
+            - /url: /idmtdev/public/#
+            - generic [ref=e36]: 
+        - listitem [ref=e37]:
+          - link "" [ref=e38] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e39]: 
+        - listitem [ref=e40]:
+          - link "" [ref=e41] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e42]: 
+      - text: 
+    - generic [ref=e43]:
+      - generic [ref=e46]:
+        - link "" [ref=e49] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e50]: 
+        - group "Button group with nested dropdown" [ref=e52]:
+          - group [ref=e53]:
+            - button " 0" [ref=e54] [cursor=pointer]:
+              - generic [ref=e55]: 
+              - generic [ref=e56]: "0"
+            - generic " 0":
+              - 'link " Inbox `Request Approval` Anda Klik untuk kunjungi halaman"':
+                - /url: /idmtdev/public/idmt/approval
+                - generic: 
+                - generic:
+                  - text: "Inbox `Request Approval` Anda"
+                  - generic: Klik untuk kunjungi halaman
+              - text:   
+          - group [ref=e57]:
+            - button [ref=e58] [cursor=pointer]
+            - generic:
+              - generic:
+                - generic: 
+                - text: Pandu Putra Pradana
+              - link " Konfigurasi profil":
+                - /url: /idmtdev/public/actor/form/profile
+                - generic: 
+                - text: Konfigurasi profil
+              - link " Keluar":
+                - /url: /idmtdev/public/logout
+                - generic: 
+                - text: Keluar
+      - generic [ref=e62]:
+        - generic [ref=e63]:
+          - generic [ref=e66]:
+            - text: Tampilkan
+            - combobox "Tampilkan entri" [ref=e67]:
+              - option "10" [selected]
+              - option "25"
+              - option "50"
+              - option "100"
+            - text: entri
+          - generic [ref=e69]:
+            - generic [ref=e70]:
+              - text: "Cari:"
+              - searchbox "Cari:" [ref=e71]
+            - button "Buat Baru" [ref=e73] [cursor=pointer]
+        - table [ref=e76]:
+          - rowgroup [ref=e77]:
+            - 'row "ID: activate to sort column descending Nama: activate to sort column ascending Deskripsi: activate to sort column ascending Alat" [ref=e78]':
+              - 'columnheader "ID: activate to sort column descending" [ref=e79] [cursor=pointer]': ▴ ID ▾
+              - 'columnheader "Nama: activate to sort column ascending" [ref=e80] [cursor=pointer]': ▴ Nama ▾
+              - 'columnheader "Deskripsi: activate to sort column ascending" [ref=e81] [cursor=pointer]': ▴ Deskripsi ▾
+              - columnheader "Alat" [ref=e82]
+          - rowgroup [ref=e83]:
+            - row "105 Attribute Name Type 001 for Playwright Testing" [ref=e84]:
+              - cell "105" [ref=e85]
+              - cell "Attribute Name Type 001" [ref=e86]
+              - cell "for Playwright Testing" [ref=e87]
+              - cell [ref=e88]:
+                - group [ref=e89]:
+                  - link "" [ref=e90] [cursor=pointer]:
+                    - /url: "#"
+                    - generic [ref=e91]: 
+                  - link "" [ref=e92] [cursor=pointer]:
+                    - /url: "#"
+                    - generic [ref=e93]: 
+        - generic [ref=e94]:
+          - status [ref=e96]: Menampilkan 1 sampai 1 dari 1 entri
+          - list [ref=e99]:
+            - listitem:
+              - link "Sebelumnya":
+                - /url: "#"
+            - listitem [ref=e100]:
+              - link "1" [ref=e101] [cursor=pointer]:
+                - /url: "#"
+            - listitem:
+              - link "Selanjutnya":
+                - /url: "#"
+  - text: 
+  - generic [ref=e102] [cursor=pointer]: Roles
+```
