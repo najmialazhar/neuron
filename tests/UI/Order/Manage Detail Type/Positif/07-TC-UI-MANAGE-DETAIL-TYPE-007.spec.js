@@ -35,7 +35,7 @@ test('Update Data Manage Detail Type', async ({ page, browserName }, testInfo) =
   await page.getByRole('link', { name: 'Order' }).click();
   await page.getByRole('link', { name: 'Manage Detail Type' }).click();
   await page.waitForTimeout(1000);
-  await page.getByRole('link').filter({ hasText: /^$/ }).nth(5).click();
+  await page.locator('tr:nth-child(3) > td:nth-child(4) > .btn-group > .btn.btn-sm.btn-primary').click();
   await page.getByRole('textbox', { name: 'Nama *' }).click();
   await page.getByRole('textbox', { name: 'Nama *' }).fill(keyword1);
   // await page.getByRole('textbox', { name: 'Deskripsi' }).click();
