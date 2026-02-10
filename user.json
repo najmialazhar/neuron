@@ -2,20 +2,20 @@
   "cookies": [
     {
       "name": "WMF-Uniq",
-      "value": "dCXDmUz6RXH8vigsHcPghgL-AAAAAFvd71QJweeglB_1g-Yt07oOf4krE06ctrLK",
+      "value": "R17R-n_VJkjAgW0dydkrNQMDAAAAAFvdgxs0sGYnHz_JipVcHUjYJgxZ4CDhJZLh",
       "domain": ".upload.wikimedia.org",
       "path": "/",
-      "expires": 1801802115.821218,
+      "expires": 1802263127.684573,
       "httpOnly": true,
       "secure": true,
       "sameSite": "None"
     },
     {
       "name": "idmt",
-      "value": "gbqj03u31pg5sfgt7m5rardofv",
+      "value": "2i19eqqeigfgqhlh7icqbqmfhr",
       "domain": "10.62.180.28",
       "path": "/",
-      "expires": 1770883281.178349,
+      "expires": 1771291857.605909,
       "httpOnly": true,
       "secure": false,
       "sameSite": "Lax"
