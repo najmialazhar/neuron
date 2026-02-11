@@ -6,7 +6,7 @@ import { ReportingApi } from '@reportportal/agent-js-playwright';
 const devTestData = JSON.parse(JSON.stringify(require('../../../../../data/dev/dataDev.json')));
 const dataDev = devTestData.MENU_LOGIN.LOGINKREDENSIALINVALID;
 const qaTestData = JSON.parse(JSON.stringify(require('../../../../../data/qa/dataQa.json')));
-const dataQa = qaTestData.MENU_LOGIN.LOGINKREDENSIALINVALID;
+const dataQa = qaTestData.NOTIFICATION.NOTIFICATION_EMAIL;
 
 
 test('Create data Notification Email', async ({ page, browserName }, testInfo) => {
@@ -33,12 +33,11 @@ test('Create data Notification Email', async ({ page, browserName }, testInfo) =
   await page.goto(process.env.WEB_URL);
   await page.getByRole('link', { name: 'Notification' }).click();
   await page.getByRole('link', { name: 'Notification Email' }).click();
-  const keyword1 = 'PlaywrightTestingTiga'
   await page.getByRole('button', { name: 'New Template' }).click();
-  await page.locator('#template_code').fill(keyword1);
-  await page.locator('#template_code').fill(keyword1);
-  await page.locator('#template_name').fill(keyword1);
-  await page.locator('#subject').fill(keyword1);
+  await page.locator('#template_code').fill(dataQa.inputdata3);
+  await page.locator('#template_code').fill(dataQa.inputdata3);
+  await page.locator('#template_name').fill(dataQa.inputdata3);
+  await page.locator('#subject').fill(dataQa.inputdata3);
   await page.getByRole('button', { name: 'Save' }).click();
   await expect(page.getByRole('alert')).toContainText('OK');
   

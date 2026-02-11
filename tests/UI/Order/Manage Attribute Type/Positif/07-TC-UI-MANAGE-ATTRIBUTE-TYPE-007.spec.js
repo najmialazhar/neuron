@@ -6,7 +6,7 @@ import { ReportingApi } from '@reportportal/agent-js-playwright';
 const devTestData = JSON.parse(JSON.stringify(require('../../../../../data/dev/dataDev.json')));
 const dataDev = devTestData.MENU_LOGIN.LOGINKREDENSIALINVALID;
 const qaTestData = JSON.parse(JSON.stringify(require('../../../../../data/qa/dataQa.json')));
-const dataQa = qaTestData.MENU_LOGIN.LOGINKREDENSIALINVALID;
+const dataQa = qaTestData.MENU_ORDER.MANAGE_ATTRIBUTE_TYPE;
 
 
 test('Update Data Manage Attribute Type', async ({ page, browserName }, testInfo) => {
@@ -37,12 +37,12 @@ test('Update Data Manage Attribute Type', async ({ page, browserName }, testInfo
   await page.waitForTimeout(1000);
   await page.getByRole('link').filter({ hasText: /^$/ }).nth(5).click();
   await page.getByRole('textbox', { name: 'Nama *' }).click();
-  await page.getByRole('textbox', { name: 'Nama *' }).fill(keyword1);
+  await page.getByRole('textbox', { name: 'Nama *' }).fill(dataQa.inputdata6);
   await page.getByRole('textbox', { name: 'Deskripsi' }).click();
-  await page.getByRole('textbox', { name: 'Deskripsi' }).fill(keyword2);
+  await page.getByRole('textbox', { name: 'Deskripsi' }).fill(dataQa.inputdata3);
   await page.getByRole('button', { name: 'Simpan' }).click();
   await page.goto(process.env.REFRESHPAGE1);
-  await expect(page.locator('tbody')).toContainText(keyword1);
+  await expect(page.locator('tbody')).toContainText(dataQa.inputdata6);
 
   const screenshot = await page.screenshot();
   await testInfo.attach("Screenshot", {

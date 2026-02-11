@@ -6,7 +6,7 @@ import { ReportingApi } from '@reportportal/agent-js-playwright';
 const devTestData = JSON.parse(JSON.stringify(require('../../../../../data/dev/dataDev.json')));
 const dataDev = devTestData.MENU_LOGIN.LOGINKREDENSIALINVALID;
 const qaTestData = JSON.parse(JSON.stringify(require('../../../../../data/qa/dataQa.json')));
-const dataQa = qaTestData.MENU_LOGIN.LOGINKREDENSIALINVALID;
+const dataQa = qaTestData.MENU_ORDER.DEFINE_SUBTYPE;
 
 
 test('Batal Create Data Define Subtype', async ({ page, browserName }, testInfo) => {
@@ -29,9 +29,6 @@ test('Batal Create Data Define Subtype', async ({ page, browserName }, testInfo)
       
   }
   await page.goto(process.env.WEB_URL);
-  const keyword1 = ''; // sesuaikan sama nama atribut-tipe yg mau diinput
-  const keyword2 = ''; // sesuaikan sama deskripsi yg mau diinput
-
   await page.getByRole('link', { name: 'Order' }).click();
   await page.getByRole('link', { name: 'Define Type' }).click();
   await page.waitForTimeout(1000);

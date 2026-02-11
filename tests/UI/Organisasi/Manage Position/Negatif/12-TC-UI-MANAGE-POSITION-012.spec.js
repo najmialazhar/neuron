@@ -6,7 +6,7 @@ import { ReportingApi } from '@reportportal/agent-js-playwright';
 const devTestData = JSON.parse(JSON.stringify(require('../../../../../data/dev/dataDev.json')));
 const dataDev = devTestData.MENU_LOGIN.LOGINKREDENSIALINVALID;
 const qaTestData = JSON.parse(JSON.stringify(require('../../../../../data/qa/dataQa.json')));
-const dataQa = qaTestData.MENU_LOGIN.LOGINKREDENSIALINVALID;
+const dataQa = qaTestData.ORGANISASI.MANAGE_POSITION;
 
 
 test('Update data Manage Position', async ({ page, browserName }, testInfo) => {
@@ -29,14 +29,12 @@ test('Update data Manage Position', async ({ page, browserName }, testInfo) => {
       
   }
   await page.goto(process.env.WEB_URL);
-  const keyword1 = ''
-  const keyword2 = ''
   await page.getByRole('link', { name: 'Organisasi' }).click();
   await page.getByRole('link', { name: 'Manage Position' }).click();
   await page.waitForTimeout(500);
   await page.locator('tr:nth-child(9) > .text-center > .btn-group > .command-edit').click();
-  await page.getByRole('textbox', { name: 'Nama *' }).fill(keyword1);
-  await page.getByRole('spinbutton', { name: 'Level *' }).fill(keyword2);
+  await page.getByRole('textbox', { name: 'Nama *' }).fill('');
+  await page.getByRole('spinbutton', { name: 'Level *' }).fill('');
   await page.getByRole('button', { name: 'Simpan' }).click();
   await expect(page.locator('#title-error')).toContainText('Please insert title');
   await expect(page.locator('#level-error')).toContainText('Please insert level');

@@ -7,7 +7,7 @@ import { ReportingApi } from '@reportportal/agent-js-playwright';
 const devTestData = JSON.parse(JSON.stringify(require('../../../../../data/dev/dataDev.json')));
 const dataDev = devTestData.MENU_LOGIN.LOGINKREDENSIALINVALID;
 const qaTestData = JSON.parse(JSON.stringify(require('../../../../../data/qa/dataQa.json')));
-const dataQa = qaTestData.MENU_LOGIN.LOGINKREDENSIALINVALID;
+const dataQa = qaTestData.MENU_DOKUMEN.LIST_TIPE_DOKUMEN;
 
 
 test('Search Data Tipe Dokumen', async ({ page, browserName }, testInfo) => {
@@ -27,11 +27,10 @@ test('Search Data Tipe Dokumen', async ({ page, browserName }, testInfo) => {
       
   }
   await page.goto(process.env.WEB_URL);
-  const keywordforsearch = 'qqq'; // sesuaikan sama nama yang mau diinput sebagai testing search
   await page.getByRole('link', { name: /dokumen/i }).click();
   await page.getByRole('link', { name: /kelola tipe dokumen/i }).click();
   await page.waitForTimeout(300);
-  await page.getByRole('textbox', { name: /cari/i }).fill(keywordforsearch);
+  await page.getByRole('textbox', { name: /cari/i }).fill(dataQa.inputdata8);
   await expect(page.getByRole('heading')).toContainText('Kelola Tipe Dokumen');
 
     

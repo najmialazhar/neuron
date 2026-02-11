@@ -6,7 +6,7 @@ import { ReportingApi } from '@reportportal/agent-js-playwright';
 const devTestData = JSON.parse(JSON.stringify(require('../../../../../data/dev/dataDev.json')));
 const dataDev = devTestData.MENU_LOGIN.LOGINKREDENSIALINVALID;
 const qaTestData = JSON.parse(JSON.stringify(require('../../../../../data/qa/dataQa.json')));
-const dataQa = qaTestData.MENU_LOGIN.LOGINKREDENSIALINVALID;
+const dataQa = qaTestData.NOTIFICATION.NOTIFICATION_PROFILE;
 
 
 test('Search data Notification Profile', async ({ page, browserName }, testInfo) => {
@@ -26,10 +26,9 @@ test('Search data Notification Profile', async ({ page, browserName }, testInfo)
       
   }
   await page.goto(process.env.WEB_URL);
-  const keyword1 = 'qqq';
   await page.getByRole('link', { name: 'Notification' }).click();
   await page.getByRole('link', { name: 'Notification Profile' }).click();
-  await page.getByRole('searchbox', { name: 'Cari:' }).fill(keyword1);
+  await page.getByRole('searchbox', { name: 'Cari:' }).fill(dataQa.inputdata2);
   await expect(page.getByRole('cell')).toContainText('Tidak ada data yang tersedia pada tabel ini');
   
 

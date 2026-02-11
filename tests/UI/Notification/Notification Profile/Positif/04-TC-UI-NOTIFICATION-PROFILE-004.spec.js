@@ -6,7 +6,7 @@ import { ReportingApi } from '@reportportal/agent-js-playwright';
 const devTestData = JSON.parse(JSON.stringify(require('../../../../../data/dev/dataDev.json')));
 const dataDev = devTestData.MENU_LOGIN.LOGINKREDENSIALINVALID;
 const qaTestData = JSON.parse(JSON.stringify(require('../../../../../data/qa/dataQa.json')));
-const dataQa = qaTestData.MENU_LOGIN.LOGINKREDENSIALINVALID;
+const dataQa = qaTestData.NOTIFICATION.NOTIFICATION_PROFILE;
 
 
 test('Create data Notification Profile', async ({ page, browserName }, testInfo) => {
@@ -41,21 +41,17 @@ test('Create data Notification Profile', async ({ page, browserName }, testInfo)
   await page.goto(process.env.WEB_URL);
   await page.getByRole('link', { name: 'Notification' }).click();
   await page.getByRole('link', { name: 'Notification Profile' }).click();
-  const keyword1 = 'Playwrighttest';
-  const keyword2 = 'pwtest';
-  const email = 'playwrighttest@gmail.com';
-
   await page.getByRole('button', { name: 'New Profile' }).click();
-  await page.locator('#profile_name').fill(keyword1);
-  await page.locator('#email').fill(email);
+  await page.locator('#profile_name').fill(dataQa.inputdata3);
+  await page.locator('#email').fill(dataQa.inputdata5);
   await page.getByRole('button', { name: 'Create Configuration' }).click();
-  await page.locator('#name').fill(keyword2);
-  await page.locator('#host').fill(keyword2);
-  await page.locator('#port').fill(keyword2);
-  await page.locator('#connection_class').fill(keyword2);
-  await page.locator('#ssl').fill(keyword2);
-  await page.locator('#username').fill(keyword2);
-  await page.locator('#password').fill(keyword2);
+  await page.locator('#name').fill(dataQa.inputdata4);
+  await page.locator('#host').fill(keywdataQa.inputdata4ord2);
+  await page.locator('#port').fill(dataQa.inputdata4);
+  await page.locator('#connection_class').fill(dataQa.inputdata4);
+  await page.locator('#ssl').fill(dataQa.inputdata4);
+  await page.locator('#username').fill(dataQa.inputdata4);
+  await page.locator('#password').fill(dataQa.inputdata4);
   await page.locator('#configModal').getByRole('button', { name: 'Save' }).click();
   await page.getByRole('button', { name: 'Save' }).click();
    await expect(page.getByRole('heading', { name: 'New Profile' })).toBeVisible(); // Locator disesuaikan karena test result failed

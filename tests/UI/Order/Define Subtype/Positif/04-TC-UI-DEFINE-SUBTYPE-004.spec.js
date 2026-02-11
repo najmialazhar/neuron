@@ -6,7 +6,7 @@ import { ReportingApi } from '@reportportal/agent-js-playwright';
 const devTestData = JSON.parse(JSON.stringify(require('../../../../../data/dev/dataDev.json')));
 const dataDev = devTestData.MENU_LOGIN.LOGINKREDENSIALINVALID;
 const qaTestData = JSON.parse(JSON.stringify(require('../../../../../data/qa/dataQa.json')));
-const dataQa = qaTestData.MENU_LOGIN.LOGINKREDENSIALINVALID;
+const dataQa = qaTestData.MENU_ORDER.DEFINE_SUBTYPE;
 
 
 test('Create Data Define Subtype', async ({ page, browserName }, testInfo) => {
@@ -29,20 +29,17 @@ test('Create Data Define Subtype', async ({ page, browserName }, testInfo) => {
       
   }
   await page.goto(process.env.WEB_URL);
-  const keyword1 = 'Define Subtype Name 002'; // sesuaikan sama nama atribut-tipe yg mau diinput
-  const keyword2 = 'For Playwright Testing 002'; // sesuaikan sama deskripsi yg mau diinput
-
   await page.getByRole('link', { name: 'Order' }).click();
   await page.getByRole('link', { name: 'Define Subtype' }).click();
   await page.waitForTimeout(500);
   await page.getByRole('button', { name: 'Buat Baru' }).click();
   await page.getByLabel('Nama Tipe Order *').selectOption('77');
   await page.getByRole('textbox', { name: 'Nama *' }).click();
-  await page.getByRole('textbox', { name: 'Nama *' }).fill(keyword1);
+  await page.getByRole('textbox', { name: 'Nama *' }).fill(dataQa.inputdata3);
   await page.getByRole('textbox', { name: 'Deskripsi' }).click();
-  await page.getByRole('textbox', { name: 'Deskripsi' }).fill(keyword2);
+  await page.getByRole('textbox', { name: 'Deskripsi' }).fill(dataQa.inputdata4);
   await page.getByRole('button', { name: 'Simpan' }).click();
-  await expect(page.locator('tbody')).toContainText(keyword1);
+  await expect(page.locator('tbody')).toContainText(dataQa.inputdata3);
 
   const screenshot = await page.screenshot();
   await testInfo.attach("Screenshot", {

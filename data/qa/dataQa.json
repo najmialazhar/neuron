@@ -10,6 +10,109 @@
             "username": "invalid_user",
             "password": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled"
         }
-    }
+    },
+    "MENU_APROVAL": {
+        "APROVAL": {
+            "inputdata1": "TECH09122024",
+            "inputdata2": "TECH09122024@yopmail.com"
+        }
+    },
+    "MENU_DOKUMEN": {
+        "LIST_DOKUMEN": {
+            "inputdata1": "NW/2019/12/16/KK.80080201",
+            "inputdata2": "NW/2019/12/16/SK.666",
+            "inputdata3": "qqq",
+            "inputdata4": "Testing",
+            "inputdata5": "NW/2019/12/16/SK.81080203",
+            "inputdata6": "UpdateTesting"
+        },
+        "LIST_TIPE_DOKUMEN": {
+            "inputdata1": "Person",
+            "inputdata2": "Testing002",
+            "inputdata3": "Testing003",
+            "inputdata4": "UpdatedTesting004",
+            "inputdata5": "UpdatedTesting005",
+            "inputdata6": "Testing100",
+            "inputdata7": "TestingSub",
+            "inputdata8": "qqq"
+        }
+    },
 
+    "MENU_ORDER": {
+        "MANAGE_ATTRIBUTE_TYPE": {
+            "inputdata1": "Attribute Type Name 001",
+            "inputdata2": "qqq",
+            "inputdata3": "For Playwright-Testing",
+            "inputdata4": "Attribute Type Name 003",
+            "inputdata5": "Attribute Type Name 004",
+            "inputdata6": "Attribute Type Name 005"
+        },
+        "MANAGE_DETAIL_TYPE": {
+            "inputdata1": "Detail Type Name 1",
+            "inputdata2": "qqq",
+            "inputdata3": "Detail Type Name 3",
+            "inputdata4": "For Playwright Testing 3"
+        },
+        "MANAGE_STATUS": {
+            "inputdata1": "Open",
+            "inputdata2": "qqq",
+            "inputdata3": "Manage Status Name 001",
+            "inputdata4": "Updated Manage Status 001",
+            "inputdata5": "For Playwright Testing Updated"
+        },
+        "DEFINE_TYPE": {
+            "inputdata1": "Default",
+            "inputdata2": "qqq",
+            "inputdata3": "Define Type Name 002",
+            "inputdata4": "For Playwright Testing",
+            "inputdata5": "Updated Define Type 001",
+            "inputdata6": "For Playwright Testing 001 Updated"
+        },
+        "DEFINE_SUBTYPE": {
+            "inputdata1": "Default",
+            "inputdata2": "qqq",
+            "inputdata3": "Define Subtype Name 002",
+            "inputdata4": "For Playwright Testing",
+            "inputdata5": "Updated Define Type 001",
+            "inputdata6": "For Playwright Testing Updated"
+        }
+    },
+    "ORGANISASI": {
+        "MANAGE_POSITION": {
+            "inputdata1": "Default",
+            "inputdata2": "qqq",
+            "inputdata3": "Playwright-Testing",
+            "inputdata4": "Playwright-Testing 3",
+            "inputdata5": "Updated-Testing"
+
+        }
+    },
+    "NOTIFICATION": {
+        "NOTIFICATION_EMAIL": {
+            "inputdata1": "PlaywrightTesting",
+            "inputdata2": "qqq",
+            "inputdata3": "PlaywrightTestingTiga",
+            "inputdata4": "Playwright-Testing 3",
+            "inputdata5": "Updated-Testing"
+        },
+        "NOTIFICATION_PROFILE": {
+            "inputdata1": "Telkom",
+            "inputdata2": "qqq",
+            "inputdata3": "Playwrighttest",
+            "inputdata4": "pwtest",
+            "inputdata5": "playwrighttest@gmail.com"
+        },
+        "NOTIFICATION_SMS": {
+            "inputdata1": "Testing2000",
+            "inputdata2": "qqq",
+            "inputdata3": "Testing2002",
+            "inputdata4": "Playwright-Testing"
+        },
+        "NOTIFICATION_TELEGRAM": {
+            "searchpositif": "Testing",
+            "searchnegatif": "qqq",
+            "inputdata1": "Testing2001",
+            "inputdata2": "Playwright-Testing"
+        }
+    }
 }

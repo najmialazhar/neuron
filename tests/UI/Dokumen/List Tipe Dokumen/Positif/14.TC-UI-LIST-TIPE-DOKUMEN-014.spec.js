@@ -7,7 +7,7 @@ import { ReportingApi } from '@reportportal/agent-js-playwright';
 const devTestData = JSON.parse(JSON.stringify(require('../../../../../data/dev/dataDev.json')));
 const dataDev = devTestData.MENU_LOGIN.LOGINKREDENSIALINVALID;
 const qaTestData = JSON.parse(JSON.stringify(require('../../../../../data/qa/dataQa.json')));
-const dataQa = qaTestData.MENU_LOGIN.LOGINKREDENSIALINVALID;
+const dataQa = qaTestData.MENU_DOKUMEN.LIST_TIPE_DOKUMEN;
 
 
 test('Hapus Data Tipe Dokumen', async ({ page, browserName }, testInfo) => {
@@ -31,11 +31,11 @@ test('Hapus Data Tipe Dokumen', async ({ page, browserName }, testInfo) => {
   }
 
   await page.goto(process.env.WEB_URL);
-  await page.getByRole('link', { name: 'Dokumen ' }).click();
+  await page.getByRole('link', { name: 'Dokumen' }).click();
   await page.getByRole('link', { name: 'Kelola Tipe Dokumen' }).click();
   await page.getByTitle('Tambah Sub').nth(3).click();
-  await page.getByRole('textbox', { name: 'Jenis Induk' }).fill('TestingSub');
-  await page.getByRole('textbox', { name: 'Deskripsi' }).fill('TestingSub');
+  await page.getByRole('textbox', { name: 'Jenis Induk' }).fill(dataQa.inputdata7);
+  await page.getByRole('textbox', { name: 'Deskripsi' }).fill(dataQa.inputdata7);
   await page.getByRole('button', { name: 'Simpan' }).click();
   await expect(page.getByRole('alert')).toContainText('Berhasil menyimpan jenis dokumen');
 

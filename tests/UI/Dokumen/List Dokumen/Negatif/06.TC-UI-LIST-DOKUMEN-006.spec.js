@@ -7,7 +7,7 @@ import { ReportingApi } from '@reportportal/agent-js-playwright';
 const devTestData = JSON.parse(JSON.stringify(require('../../../../../data/dev/dataDev.json')));
 const dataDev = devTestData.MENU_LOGIN.LOGINKREDENSIALINVALID;
 const qaTestData = JSON.parse(JSON.stringify(require('../../../../../data/qa/dataQa.json')));
-const dataQa = qaTestData.MENU_LOGIN.LOGINKREDENSIALINVALID;
+const dataQa = qaTestData.MENU_DOKUMEN.LIST_DOKUMEN;
 
 
 test('Create Data Dokumen', async ({ page, browserName }, testInfo) => {
@@ -33,10 +33,8 @@ test('Create Data Dokumen', async ({ page, browserName }, testInfo) => {
   await page.goto(process.env.WEB_URL);
   await page.getByRole('link', { name: 'Dokumen ' }).click();
   await page.getByRole('link', { name: 'Kelola Dokumen' }).click(); 
-  const keyword = 'NW/2019/12/16/SK.666'; // sesuaikan sama nomor dokumen yang mau diinput sebagai testing
-  const keyword2 = 'Testing'; // sesuaikan sama nama yang mau diinput sebagai testing
   await page.getByRole('button', { name: 'Buat baru' }).click();  
-  await page.getByRole('textbox', { name: 'Nama Dokumen' }).fill(keyword2);
+  await page.getByRole('textbox', { name: 'Nama Dokumen' }).fill(dataQa.inputdata4);
   await page.getByRole('button', { name: 'Simpan' }).click();
   await expect(page.locator('#main_page')).toContainText('Document List');
   

@@ -25,7 +25,7 @@ test('Get List Data Approval', async ({ page, browserName }, testInfo) => {
       testData = dataQa;
   }
   await page.goto(process.env.WEB_URL);
-  await page.getByRole('link', { name: 'Manage Approval ' }).click();
+  await page.getByRole('link', { name: 'Manage Approval' }).click();
   await page.getByRole('link', { name: 'List Data Approval' }).click();
   await expect(page.getByRole('columnheader', { name: 'Kode: activate to sort column' })).toBeVisible();
   await expect(page.getByRole('columnheader', { name: 'Nama Lengkap: activate to' })).toBeVisible();

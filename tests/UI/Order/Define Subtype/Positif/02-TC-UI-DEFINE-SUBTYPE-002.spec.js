@@ -6,7 +6,7 @@ import { ReportingApi } from '@reportportal/agent-js-playwright';
 const devTestData = JSON.parse(JSON.stringify(require('../../../../../data/dev/dataDev.json')));
 const dataDev = devTestData.MENU_LOGIN.LOGINKREDENSIALINVALID;
 const qaTestData = JSON.parse(JSON.stringify(require('../../../../../data/qa/dataQa.json')));
-const dataQa = qaTestData.MENU_LOGIN.LOGINKREDENSIALINVALID;
+const dataQa = qaTestData.MENU_ORDER.DEFINE_SUBTYPE;
 
 
 test('Search Define Subtype', async ({ page, browserName }, testInfo) => {
@@ -28,12 +28,11 @@ test('Search Define Subtype', async ({ page, browserName }, testInfo) => {
   await page.goto(process.env.WEB_URL);
   await page.getByRole('link', { name: 'Order' }).click();
   await page.getByRole('link', { name: 'Define Subtype' }).click();
-  const keyword = 'Default'; // sesuaikan sama nomor dokumen yg mau dicari
   const searchbox = page.getByRole('searchbox', { name: /cari/i });
-  await searchbox.fill(keyword);
+  await searchbox.fill(dataQa.inputdata1);
   await page.waitForTimeout(1000);
 
-  await expect(page.locator('tbody')).toContainText(keyword);
+  await expect(page.locator('tbody')).toContainText(dataQa.inputdata1);
 
   const screenshot = await page.screenshot();
   await testInfo.attach("Screenshot", {

@@ -7,7 +7,7 @@ import { ReportingApi } from '@reportportal/agent-js-playwright';
 const devTestData = JSON.parse(JSON.stringify(require('../../../../../data/dev/dataDev.json')));
 const dataDev = devTestData.MENU_LOGIN.LOGINKREDENSIALINVALID;
 const qaTestData = JSON.parse(JSON.stringify(require('../../../../../data/qa/dataQa.json')));
-const dataQa = qaTestData.MENU_LOGIN.LOGINKREDENSIALINVALID;
+const dataQa = qaTestData.MENU_DOKUMEN.LIST_DOKUMEN;
 
 
 test('Batal Update Data Dokumen', async ({ page, browserName }, testInfo) => {
@@ -33,7 +33,7 @@ test('Batal Update Data Dokumen', async ({ page, browserName }, testInfo) => {
   const keyword2 = 'Update Testing'; // sesuaikan sama nama yang mau diinput sebagai testing update
   await page.getByRole('link', { name: /dokumen/i }).click();
   await page.getByRole('link', { name: /kelola dokumen/i }).click();
-  const row = page.getByRole('row', { name: new RegExp(noDokumen) });
+  const row = page.getByRole('row', { name: new RegExp(dataQa.inputdata1) });
   await row.getByLabel(/ubah/i).click();
   await page.getByRole('button', { name: 'Batalkan' }).click();
   await expect(page.locator('h3')).toContainText('Kelola Dokumen');

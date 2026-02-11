@@ -7,7 +7,7 @@ import { ReportingApi } from '@reportportal/agent-js-playwright';
 const devTestData = JSON.parse(JSON.stringify(require('../../../../../data/dev/dataDev.json')));
 const dataDev = devTestData.MENU_LOGIN.LOGINKREDENSIALINVALID;
 const qaTestData = JSON.parse(JSON.stringify(require('../../../../../data/qa/dataQa.json')));
-const dataQa = qaTestData.MENU_LOGIN.LOGINKREDENSIALINVALID;
+const dataQa = qaTestData.MENU_DOKUMEN.LIST_DOKUMEN;
 
 
 test('Update Data Dokumen', async ({ page, browserName }, testInfo) => {
@@ -31,18 +31,15 @@ test('Update Data Dokumen', async ({ page, browserName }, testInfo) => {
       
   }
   await page.goto(process.env.WEB_URL);
-  const noDokumen = 'NW/2019/12/16/KK.80080201'; // sesuaikan sama nomor dokumen yang mau di update
-  const UpdatedNoDokumen = 'NW/2019/12/16/SK.81080203'; // sesuaikan dengan nomor dokumen yang baru
-  const keyword2 = 'Update Testing'; // sesuaikan sama nama yang mau diinput sebagai testing update
   await page.getByRole('link', { name: /dokumen/i }).click();
   await page.getByRole('link', { name: /kelola dokumen/i }).click();
-  const row = page.getByRole('row', { name: new RegExp(noDokumen) });
+  const row = page.getByRole('row', { name: new RegExp(dataQa.inutdata1) });
   await row.getByLabel(/ubah/i).click();
   await page.getByRole('textbox', { name: 'No Dokumen' }).press('ControlOrMeta+a');
-  await page.getByRole('textbox', { name: 'No Dokumen' }).fill(UpdatedNoDokumen);
+  await page.getByRole('textbox', { name: 'No Dokumen' }).fill(dataQa.inputdata5);
   await page.getByRole('textbox', { name: 'Nama Dokumen' }).click();
   await page.getByRole('textbox', { name: 'Nama Dokumen' }).press('ControlOrMeta+a');
-  await page.getByRole('textbox', { name: 'Nama Dokumen' }).fill('Update Testing');
+  await page.getByRole('textbox', { name: 'Nama Dokumen' }).fill(dataQa.inputdata6);
   await page.getByRole('button', { name: 'Simpan' }).click();
     
   const screenshot = await page.screenshot();

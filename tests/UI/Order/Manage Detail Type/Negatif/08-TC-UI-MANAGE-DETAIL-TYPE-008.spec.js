@@ -6,7 +6,7 @@ import { ReportingApi } from '@reportportal/agent-js-playwright';
 const devTestData = JSON.parse(JSON.stringify(require('../../../../../data/dev/dataDev.json')));
 const dataDev = devTestData.MENU_LOGIN.LOGINKREDENSIALINVALID;
 const qaTestData = JSON.parse(JSON.stringify(require('../../../../../data/qa/dataQa.json')));
-const dataQa = qaTestData.MENU_LOGIN.LOGINKREDENSIALINVALID;
+const dataQa = qaTestData.MENU_ORDER.MANAGE_DETAIL_TYPE;
 
 
 test('Update Data Manage Detail Type', async ({ page, browserName }, testInfo) => {
@@ -28,15 +28,12 @@ test('Update Data Manage Detail Type', async ({ page, browserName }, testInfo) =
       
   }
   await page.goto(process.env.WEB_URL);
-  const keyword1 = ''; // sesuaikan sama nama atribut-tipe yg mau diinput
-  const keyword2 = 'For Playwright Testing 5'; // sesuaikan sama deskripsi yg mau diinput
-
   await page.getByRole('link', { name: 'Order' }).click();
   await page.getByRole('link', { name: 'Manage Detail Type' }).click();
   await page.waitForTimeout(1000);
   await page.getByRole('link').filter({ hasText: /^$/ }).nth(5).click();
   await page.getByRole('textbox', { name: 'Nama *' }).click();
-  await page.getByRole('textbox', { name: 'Nama *' }).fill(keyword1);
+  await page.getByRole('textbox', { name: 'Nama *' }).fill('');
   await page.getByRole('button', { name: 'Simpan' }).click();
   await expect(page.locator('#name-error')).toContainText('This field is required.');
 

@@ -6,7 +6,7 @@ import { ReportingApi } from '@reportportal/agent-js-playwright';
 const devTestData = JSON.parse(JSON.stringify(require('../../../../../data/dev/dataDev.json')));
 const dataDev = devTestData.MENU_LOGIN.LOGINKREDENSIALINVALID;
 const qaTestData = JSON.parse(JSON.stringify(require('../../../../../data/qa/dataQa.json')));
-const dataQa = qaTestData.MENU_LOGIN.LOGINKREDENSIALINVALID;
+const dataQa = qaTestData.MENU_ORDER.MANAGE_DETAIL_TYPE;
 
 
 test('Delete Data Manage Attribute Type', async ({ page, browserName }, testInfo) => {
@@ -27,15 +27,12 @@ test('Delete Data Manage Attribute Type', async ({ page, browserName }, testInfo
       
   }
   await page.goto(process.env.WEB_URL);
-  const keyword1 = 'Attribute Type Name 005'; // sesuaikan sama nama atribut-tipe yg mau diinput
-  const keyword2 = 'For Playwright Testing 5'; // sesuaikan sama deskripsi yg mau diinput
-
   await page.getByRole('link', { name: 'Order' }).click();
   await page.getByRole('link', { name: 'Manage Detail Type' }).click();
   await page.waitForTimeout(1000);
   await page.getByRole('link').filter({ hasText: /^$/ }).nth(4).click();
   await page.getByRole('button', { name: 'Ya' }).click();
-  await expect(page.getByRole('alert')).toContainText('×OK');
+  await expect(page.getByRole('alert')).toContainText('OK');
 
   const screenshot = await page.screenshot();
   await testInfo.attach("Screenshot", {

@@ -7,7 +7,7 @@ import { ReportingApi } from '@reportportal/agent-js-playwright';
 const devTestData = JSON.parse(JSON.stringify(require('../../../../data/dev/dataDev.json')));
 const dataDev = devTestData.MENU_LOGIN.LOGINKREDENSIALINVALID;
 const qaTestData = JSON.parse(JSON.stringify(require('../../../../data/qa/dataQa.json')));
-const dataQa = qaTestData.MENU_LOGIN.LOGINKREDENSIALINVALID;
+const dataQa = qaTestData.MENU_APROVAL.APROVAL;
 
 
 test('Filter List Data Approval', async ({ page, browserName }, testInfo) => {
@@ -36,7 +36,7 @@ test('Filter List Data Approval', async ({ page, browserName }, testInfo) => {
   await page.getByRole('link', { name: 'Manage Approval ' }).click();
   await page.getByRole('link', { name: 'List Data Approval' }).click();
   await page.locator('#btnFilter').click();
-  await page.getByRole('textbox', { name: 'Cari berdasarkan Email', exact: true }).fill(process.ENV.TESTINGEMAIL1);
+  await page.getByRole('textbox', { name: 'Cari berdasarkan Email', exact: true }).fill(dataQa.inputdata2);
   await page.getByRole('button', { name: /saring/i }).click();
   const grid = page.locator('#grid-person');
 

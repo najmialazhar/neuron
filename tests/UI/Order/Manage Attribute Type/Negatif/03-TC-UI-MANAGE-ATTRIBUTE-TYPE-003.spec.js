@@ -6,7 +6,7 @@ import { ReportingApi } from '@reportportal/agent-js-playwright';
 const devTestData = JSON.parse(JSON.stringify(require('../../../../../data/dev/dataDev.json')));
 const dataDev = devTestData.MENU_LOGIN.LOGINKREDENSIALINVALID;
 const qaTestData = JSON.parse(JSON.stringify(require('../../../../../data/qa/dataQa.json')));
-const dataQa = qaTestData.MENU_LOGIN.LOGINKREDENSIALINVALID;
+const dataQa = qaTestData.MENU_ORDER.MANAGE_ATTRIBUTE_TYPE;
 
 
 test('Search Data Manage Attribute Type', async ({ page, browserName }, testInfo) => {
@@ -28,9 +28,8 @@ test('Search Data Manage Attribute Type', async ({ page, browserName }, testInfo
   await page.goto(process.env.WEB_URL);
   await page.getByRole('link', { name: 'Order' }).click();
   await page.getByRole('link', { name: 'Manage Attribute Type' }).click();
-  const keyword = 'qqq'; // sesuaikan sama nomor dokumen yg mau dicari
   const searchbox = page.getByRole('searchbox', { name: /cari/i });
-  await searchbox.fill(keyword);
+  await searchbox.fill(dataQa.inputdata2);
   await expect(page.locator('tbody')).toContainText('Tidak ada data yang tersedia pada tabel ini');
 
   const screenshot = await page.screenshot();

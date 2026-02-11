@@ -7,7 +7,7 @@ import { ReportingApi } from '@reportportal/agent-js-playwright';
 const devTestData = JSON.parse(JSON.stringify(require('../../../../../data/dev/dataDev.json')));
 const dataDev = devTestData.MENU_LOGIN.LOGINKREDENSIALINVALID;
 const qaTestData = JSON.parse(JSON.stringify(require('../../../../../data/qa/dataQa.json')));
-const dataQa = qaTestData.MENU_LOGIN.LOGINKREDENSIALINVALID;
+const dataQa = qaTestData.MENU_DOKUMEN.LIST_DOKUMEN;
 
 
 test('Batal Delete Data Dokumen', async ({ page, browserName }, testInfo) => {
@@ -32,8 +32,6 @@ test('Batal Delete Data Dokumen', async ({ page, browserName }, testInfo) => {
   await page.getByRole('link', { name: 'Kelola Dokumen' }).click();
   await page.getByRole('row', { name: 'NW/2019/12/16/CV.91140961'}).getByLabel('Hapus').click();
   await page.getByRole('button', { name: 'Tidak' }).click();
-  await expect(page.locator('h3')).toContainText('Kelola Dokumen');
-
   await expect(page.locator('h3')).toContainText('Kelola Dokumen');
     
   const screenshot = await page.screenshot();

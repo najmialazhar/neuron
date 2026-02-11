@@ -6,7 +6,7 @@ import { ReportingApi } from '@reportportal/agent-js-playwright';
 const devTestData = JSON.parse(JSON.stringify(require('../../../../../data/dev/dataDev.json')));
 const dataDev = devTestData.MENU_LOGIN.LOGINKREDENSIALINVALID;
 const qaTestData = JSON.parse(JSON.stringify(require('../../../../../data/qa/dataQa.json')));
-const dataQa = qaTestData.MENU_LOGIN.LOGINKREDENSIALINVALID;
+const dataQa = qaTestData.MENU_ORDER.DEFINE_TYPE;
 
 
 test('Update Data Define Type', async ({ page, browserName }, testInfo) => {
@@ -37,12 +37,12 @@ test('Update Data Define Type', async ({ page, browserName }, testInfo) => {
   await page.waitForTimeout(1000);
   await page.locator('tr:nth-child(4) > td:nth-child(4) > .btn-group > .btn.btn-sm.btn-primary').click();
   await page.getByRole('textbox', { name: 'Nama *' }).click();
-  await page.getByRole('textbox', { name: 'Nama *' }).fill(keyword1);
+  await page.getByRole('textbox', { name: 'Nama *' }).fill(dataQa.inputdata5);
   await page.getByRole('textbox', { name: 'Deskripsi' }).click();
-  await page.getByRole('textbox', { name: 'Deskripsi' }).fill(keyword2);
+  await page.getByRole('textbox', { name: 'Deskripsi' }).fill(dataQa.inputdata6);
   await page.getByRole('button', { name: 'Simpan' }).click();
   await page.waitForTimeout(1000)
-  await expect(page.locator('tbody')).toContainText(keyword1);
+  await expect(page.locator('tbody')).toContainText(dataQa.inputdata5);
 
   const screenshot = await page.screenshot();
   await testInfo.attach("Screenshot", {

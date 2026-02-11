@@ -6,7 +6,7 @@ import { ReportingApi } from '@reportportal/agent-js-playwright';
 const devTestData = JSON.parse(JSON.stringify(require('../../../../../data/dev/dataDev.json')));
 const dataDev = devTestData.MENU_LOGIN.LOGINKREDENSIALINVALID;
 const qaTestData = JSON.parse(JSON.stringify(require('../../../../../data/qa/dataQa.json')));
-const dataQa = qaTestData.MENU_LOGIN.LOGINKREDENSIALINVALID;
+const dataQa = qaTestData.MENU_ORDER.DEFINE_SUBTYPE;
 
 
 test('Delete Data Define Subtype', async ({ page, browserName }, testInfo) => {
@@ -27,18 +27,16 @@ test('Delete Data Define Subtype', async ({ page, browserName }, testInfo) => {
       
   }
   await page.goto(process.env.WEB_URL);
-  const keyword1 = 'Updated Define Subtype 010'
-  const keyword2 = ''
   await page.getByRole('link', { name: 'Order' }).click();
   await page.getByRole('link', { name: 'Define Subtype' }).click();
   await page.waitForTimeout(1000);
   await page.locator('tr:nth-child(4) > td:nth-child(5) > .btn-group > .btn.btn-sm.btn-primary').click();  
   await page.waitForTimeout(1000);
   await page.getByLabel('Nama Tipe Order *').selectOption('- Pilih -');
-  await page.getByRole('textbox', { name: 'Nama *' }).fill(keyword1);
-  await page.getByRole('textbox', { name: 'Deskripsi' }).fill(keyword2);
+  await page.getByRole('textbox', { name: 'Nama *' }).fill(inputdata5);
+  await page.getByRole('textbox', { name: 'Deskripsi' }).fill('');
   await page.getByRole('button', { name: 'Simpan' }).click();
-  await expect(page.getByRole('alert')).toContainText('×order_save_failed');
+  await expect(page.getByRole('alert')).toContainText('order_save_failed');
 
 
   const screenshot = await page.screenshot();
