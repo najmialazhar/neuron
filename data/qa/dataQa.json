@@ -113,6 +113,12 @@
             "searchnegatif": "qqq",
             "inputdata1": "Testing2001",
             "inputdata2": "Playwright-Testing"
+        },
+        "NOTIFICATION_TEMPLATE": {
+            "inputdata1": "Testing",
+            "inputdata2": "qqq",
+            "inputdata3": "PlaywrightTesting",
+            "inputdata4": "Playwright-Testing"
         }
     }
 }

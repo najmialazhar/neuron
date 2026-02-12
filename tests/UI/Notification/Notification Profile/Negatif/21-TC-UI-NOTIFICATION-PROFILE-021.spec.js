@@ -11,7 +11,7 @@ const dataQa = qaTestData.NOTIFICATION.NOTIFICATION_PROFILE;
 
 test('Batal delete data Notification Profile', async ({ page, browserName }, testInfo) => {
   //baris ini berfungsi untuk menginputkan data scenario id yang ada di test case
-  ReportingApi.setTestCaseId('TC-UI-NOTIFICATION-PROFILE-019');
+  ReportingApi.setTestCaseId('TC-UI-NOTIFICATION-PROFILE-021');
   //baris ini berfungsi untuk menginputkan data test step yang ada di test case
   ReportingApi.setDescription(`
       Test Step :
@@ -30,8 +30,8 @@ test('Batal delete data Notification Profile', async ({ page, browserName }, tes
   await page.getByRole('link', { name: 'Notification' }).click();
   await page.getByRole('link', { name: 'Notification Profile' }).click();
   await page.waitForTimeout(1000)
-  await page.getByRole('link').filter({ hasText: /^$/ }).nth(4).click();
-  await page.getByRole('button', { name: 'Cancel' }).click();
+  await page.getByRole('link').filter({ hasText: /^$/ }).nth(3).click();
+  await page.getByRole('button', { name: 'Yes' }).click();
   await expect(page.getByLabel('Sender: activate to sort')).toContainText('Sender');
   
 
